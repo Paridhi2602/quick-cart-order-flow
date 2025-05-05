@@ -5,76 +5,77 @@ import { Product } from "@/context/CartContext";
 export const products: Product[] = [
   {
     id: "1",
-    name: "Organic Bananas",
-    description: "Bunch of fresh organic bananas",
-    price: 2.99,
-    image: "https://images.unsplash.com/photo-1528825871115-3581a5387919?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Fruits"
+    name: "Butter Chicken",
+    description: "Tender chicken cooked in a rich tomato and butter gravy",
+    price: 299,
+    image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Main Course"
   },
   {
     id: "2",
-    name: "Avocado",
-    description: "Ripe and ready to eat avocados",
-    price: 1.49,
-    image: "https://images.unsplash.com/photo-1574009604692-7d1476b722c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Fruits"
+    name: "Paneer Tikka",
+    description: "Chunks of paneer marinated in spices and grilled to perfection",
+    price: 249,
+    image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Starters"
   },
   {
     id: "3",
-    name: "Organic Milk",
-    description: "1 gallon of fresh organic whole milk",
-    price: 4.99,
-    image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Dairy"
+    name: "Masala Dosa",
+    description: "Crispy rice crepe filled with spiced potato filling, served with sambar and chutney",
+    price: 199,
+    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "South Indian"
   },
   {
     id: "4",
-    name: "Fresh Bread",
-    description: "Artisan sourdough bread loaf",
-    price: 3.99,
-    image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Bakery"
+    name: "Garlic Naan",
+    description: "Soft bread with garlic flavor, baked in tandoor",
+    price: 99,
+    image: "https://images.unsplash.com/photo-1600655707843-bea2e10c1aaf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Breads"
   },
   {
     id: "5",
-    name: "Organic Eggs",
-    description: "Dozen free-range organic eggs",
-    price: 5.49,
-    image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Dairy"
+    name: "Gulab Jamun",
+    description: "Soft milk solids balls soaked in sugar syrup",
+    price: 149,
+    image: "https://images.unsplash.com/photo-1601303896603-8efa0fc7be3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Desserts"
   },
   {
     id: "6",
-    name: "Apples",
-    description: "Pack of 4 fresh Honeycrisp apples",
-    price: 3.99,
-    image: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Fruits"
+    name: "Biryani",
+    description: "Fragrant rice dish with spices and choice of meat or vegetables",
+    price: 349,
+    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Main Course"
   },
   {
     id: "7",
-    name: "Bell Peppers",
-    description: "Organic red, yellow and green bell peppers",
-    price: 4.99,
-    image: "https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Vegetables"
+    name: "Samosa",
+    description: "Crispy pastry filled with spiced potatoes and peas",
+    price: 79,
+    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Starters"
   },
   {
     id: "8",
-    name: "Spinach",
-    description: "Fresh organic baby spinach",
-    price: 2.99,
-    image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Vegetables"
+    name: "Rasmalai",
+    description: "Soft cottage cheese dumplings in sweetened, thickened milk",
+    price: 179,
+    image: "https://images.unsplash.com/photo-1633933703119-fee0c0e5896c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Desserts"
   }
 ];
 
 export const categories = [
-  { id: "all", name: "All Products" },
-  { id: "Fruits", name: "Fruits" },
-  { id: "Vegetables", name: "Vegetables" },
-  { id: "Dairy", name: "Dairy" },
-  { id: "Bakery", name: "Bakery" }
+  { id: "all", name: "All Menu" },
+  { id: "Starters", name: "Starters" },
+  { id: "Main Course", name: "Main Course" },
+  { id: "South Indian", name: "South Indian" },
+  { id: "Breads", name: "Breads" },
+  { id: "Desserts", name: "Desserts" }
 ];
 
 // Function to get products by category

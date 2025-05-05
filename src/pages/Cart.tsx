@@ -19,7 +19,7 @@ const Cart: React.FC = () => {
         <h1 className="text-3xl font-bold mb-4">Your Cart</h1>
         <p className="text-muted-foreground mb-6">Your cart is currently empty.</p>
         <Button onClick={() => navigate('/menu')}>
-          Browse Products
+          Browse Menu
         </Button>
       </div>
     );
@@ -46,7 +46,7 @@ const Cart: React.FC = () => {
                   <div className="ml-4 flex-1">
                     <h3 className="font-medium">{item.product.name}</h3>
                     <p className="text-sm text-muted-foreground">{item.product.description}</p>
-                    <p className="font-bold text-primary mt-1">${item.product.price.toFixed(2)}</p>
+                    <p className="font-bold text-primary mt-1">₹{item.product.price}</p>
                   </div>
                   
                   <div className="flex items-center gap-2">
@@ -92,24 +92,24 @@ const Cart: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal}</span>
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Shipping</span>
-                  <span>$0.00</span>
+                  <span className="text-muted-foreground">Delivery Fee</span>
+                  <span>₹49</span>
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Tax</span>
-                  <span>${(cartTotal * 0.07).toFixed(2)}</span>
+                  <span className="text-muted-foreground">GST (5%)</span>
+                  <span>₹{Math.round(cartTotal * 0.05)}</span>
                 </div>
                 
                 <Separator className="my-4" />
                 
                 <div className="flex justify-between font-bold">
                   <span>Total</span>
-                  <span>${(cartTotal + cartTotal * 0.07).toFixed(2)}</span>
+                  <span>₹{cartTotal + 49 + Math.round(cartTotal * 0.05)}</span>
                 </div>
               </div>
               
@@ -132,7 +132,7 @@ const Cart: React.FC = () => {
                 className="w-full mt-2" 
                 onClick={() => navigate('/menu')}
               >
-                Continue Shopping
+                Continue Ordering
               </Button>
             </CardContent>
           </Card>

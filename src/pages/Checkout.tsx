@@ -44,7 +44,7 @@ const Checkout: React.FC = () => {
     
     toast({
       title: "Payment Successful",
-      description: "Your order has been placed successfully.",
+      description: "Your order has been placed successfully. Food will be ready in 30 minutes.",
       duration: 5000,
     });
     
@@ -58,8 +58,9 @@ const Checkout: React.FC = () => {
     return null;
   }
   
-  const tax = cartTotal * 0.07;
-  const grandTotal = cartTotal + tax;
+  const gst = Math.round(cartTotal * 0.05);
+  const deliveryFee = 49;
+  const grandTotal = cartTotal + gst + deliveryFee;
 
   return (
     <div className="container py-8">
@@ -70,7 +71,7 @@ const Checkout: React.FC = () => {
           <form onSubmit={handleSubmit}>
             <Card className="mb-8">
               <CardHeader>
-                <CardTitle>Shipping Information</CardTitle>
+                <CardTitle>Delivery Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -99,7 +100,7 @@ const Checkout: React.FC = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="address">Address</Label>
+                  <Label htmlFor="address">Delivery Address</Label>
                   <Input 
                     id="address" 
                     name="address" 
@@ -133,7 +134,7 @@ const Checkout: React.FC = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="zip">ZIP Code</Label>
+                    <Label htmlFor="zip">PIN Code</Label>
                     <Input 
                       id="zip" 
                       name="zip" 
@@ -152,9 +153,10 @@ const Checkout: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="card">
-                  <TabsList className="grid w-full grid-cols-2 mb-4">
+                  <TabsList className="grid w-full grid-cols-3 mb-4">
                     <TabsTrigger value="card">Credit Card</TabsTrigger>
-                    <TabsTrigger value="paypal">PayPal</TabsTrigger>
+                    <TabsTrigger value="upi">UPI</TabsTrigger>
+                    <TabsTrigger value="cod">Cash on Delivery</TabsTrigger>
                   </TabsList>
                   
                   <TabsContent value="card" className="space-y-4">
@@ -208,14 +210,26 @@ const Checkout: React.FC = () => {
                     </div>
                   </TabsContent>
                   
-                  <TabsContent value="paypal">
+                  <TabsContent value="upi">
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="upiId">UPI ID</Label>
+                        <Input 
+                          id="upiId" 
+                          placeholder="yourname@upi"
+                          required 
+                        />
+                      </div>
+                      <p className="text-sm text-muted-foreground">You will receive a payment request on your UPI app.</p>
+                    </div>
+                  </TabsContent>
+                  
+                  <TabsContent value="cod">
                     <div className="text-center py-8">
                       <p className="text-muted-foreground mb-4">
-                        You will be redirected to PayPal to complete your payment.
+                        Pay in cash when your order is delivered.
                       </p>
-                      <Button type="button" className="w-full">
-                        Pay with PayPal
-                      </Button>
+                      <div className="text-sm text-muted-foreground">Please keep exact change if possible.</div>
                     </div>
                   </TabsContent>
                 </Tabs>
@@ -246,7 +260,7 @@ const Checkout: React.FC = () => {
                       <span className="font-medium">{item.product.name}</span>
                       <span className="text-muted-foreground ml-2">× {item.quantity}</span>
                     </div>
-                    <span>${(item.product.price * item.quantity).toFixed(2)}</span>
+                    <span>₹{(item.product.price * item.quantity)}</span>
                   </li>
                 ))}
               </ul>
@@ -256,24 +270,24 @@ const Checkout: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal}</span>
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Tax (7%)</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span className="text-muted-foreground">GST (5%)</span>
+                  <span>₹{gst}</span>
                 </div>
                 
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Shipping</span>
-                  <span>Free</span>
+                  <span className="text-muted-foreground">Delivery Fee</span>
+                  <span>₹{deliveryFee}</span>
                 </div>
                 
                 <Separator className="my-4" />
                 
                 <div className="flex justify-between text-lg font-bold">
                   <span>Total</span>
-                  <span>${grandTotal.toFixed(2)}</span>
+                  <span>₹{grandTotal}</span>
                 </div>
               </div>
             </CardContent>

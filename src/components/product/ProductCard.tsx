@@ -25,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <CardContent className="p-4">
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-medium text-lg truncate">{product.name}</h3>
-          <p className="font-bold text-primary">${product.price.toFixed(2)}</p>
+          <p className="font-bold text-primary">₹{product.price}</p>
         </div>
         <p className="text-muted-foreground text-sm line-clamp-2">{product.description}</p>
       </CardContent>

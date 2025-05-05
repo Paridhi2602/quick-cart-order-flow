@@ -30,6 +30,25 @@ const itemSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    isVegetarian: {
+      type: Boolean,
+      default: false,
+    },
+    isSpicy: {
+      type: Boolean,
+      default: false,
+    },
+    preparationTime: {
+      type: Number, // in minutes
+      default: 15,
+    },
+    ingredients: [String],
+    nutritionalInfo: {
+      calories: Number,
+      protein: Number,
+      carbohydrates: Number,
+      fat: Number,
+    },
   },
   {
     timestamps: true,

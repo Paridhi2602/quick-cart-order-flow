@@ -18,13 +18,13 @@ const Menu: React.FC = () => {
 
   return (
     <div className="container py-8">
-      <h1 className="text-3xl font-bold mb-8">Our Products</h1>
+      <h1 className="text-3xl font-bold mb-8">Our Menu</h1>
       
       {/* Search and Filter */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">
         <div className="md:flex-1">
           <Input
-            placeholder="Search products..."
+            placeholder="Search menu items..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full"
@@ -53,7 +53,7 @@ const Menu: React.FC = () => {
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-muted-foreground text-lg">No products found matching your criteria.</p>
+          <p className="text-muted-foreground text-lg">No items found matching your criteria.</p>
           <Button 
             variant="link" 
             onClick={() => {

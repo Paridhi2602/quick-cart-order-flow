@@ -47,15 +47,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  // Mock OTP verification
+  // OTP verification - accepts any valid OTP format
   const verifyOtp = async (email: string, otp: string): Promise<boolean> => {
     setIsLoading(true);
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // In a real app, we would verify the OTP against what was sent
-      // For demo purposes, we'll just check if it's 6 digits
+      // Accept any valid OTP (has proper format of 6 digits)
       if (otp.length === 6 && /^\d+$/.test(otp)) {
         setUser({
           id: '1',
@@ -66,7 +65,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         return true;
       }
       
-      toast.error("Invalid OTP");
+      toast.error("Invalid OTP format. Please enter 6 digits.");
       return false;
     } catch (error) {
       toast.error("Failed to verify OTP");
