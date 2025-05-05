@@ -5,77 +5,80 @@ import { Product } from "@/context/CartContext";
 export const products: Product[] = [
   {
     id: "1",
-    name: "Butter Chicken",
-    description: "Tender chicken cooked in a rich tomato and butter gravy",
-    price: 299,
-    image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Main Course"
+    name: "Classic Cheeseburger",
+    description: "Juicy beef patty with melted cheddar cheese, fresh lettuce, tomato, and our special sauce on a toasted brioche bun.",
+    price: 8.99,
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Burgers"
   },
   {
     id: "2",
-    name: "Paneer Tikka",
-    description: "Chunks of paneer marinated in spices and grilled to perfection",
-    price: 249,
-    image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Starters"
+    name: "Margherita Pizza",
+    description: "Classic pizza with fresh mozzarella, tomatoes, and basil on our homemade thin crust.",
+    price: 12.99,
+    image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Pizza"
   },
   {
     id: "3",
-    name: "Masala Dosa",
-    description: "Crispy rice crepe filled with spiced potato filling, served with sambar and chutney",
-    price: 199,
-    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "South Indian"
+    name: "Caesar Salad",
+    description: "Crisp romaine lettuce, parmesan cheese, croutons, and our homemade Caesar dressing.",
+    price: 7.99,
+    image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Salads"
   },
   {
     id: "4",
     name: "Garlic Naan",
     description: "Soft bread with garlic flavor, baked in tandoor",
-    price: 99,
+    price: 2.99,
     image: "https://images.unsplash.com/photo-1600655707843-bea2e10c1aaf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     category: "Breads"
   },
   {
     id: "5",
-    name: "Gulab Jamun",
-    description: "Soft milk solids balls soaked in sugar syrup",
-    price: 149,
-    image: "https://images.unsplash.com/photo-1601303896603-8efa0fc7be3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    name: "Chocolate Brownie",
+    description: "Rich chocolate brownie served with vanilla ice cream and chocolate sauce",
+    price: 5.99,
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     category: "Desserts"
   },
   {
     id: "6",
-    name: "Biryani",
-    description: "Fragrant rice dish with spices and choice of meat or vegetables",
-    price: 349,
+    name: "Chicken Biryani",
+    description: "Fragrant basmati rice cooked with tender chicken, aromatic spices, and herbs",
+    price: 13.99,
     image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     category: "Main Course"
   },
   {
     id: "7",
-    name: "Samosa",
-    description: "Crispy pastry filled with spiced potatoes and peas",
-    price: 79,
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Starters"
+    name: "Veggie Wrap",
+    description: "Fresh vegetables, hummus, and feta cheese wrapped in a whole wheat tortilla",
+    price: 6.99,
+    image: "https://images.unsplash.com/photo-1626700846055-8f095ca0593e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Sandwiches"
   },
   {
     id: "8",
-    name: "Rasmalai",
-    description: "Soft cottage cheese dumplings in sweetened, thickened milk",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1633933703119-fee0c0e5896c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    category: "Desserts"
+    name: "Mango Lassi",
+    description: "Refreshing yogurt drink with mango pulp and a hint of cardamom",
+    price: 3.99,
+    image: "https://images.unsplash.com/photo-1555949366-99c9af5aae80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    category: "Beverages"
   }
 ];
 
 export const categories = [
-  { id: "all", name: "All Menu" },
-  { id: "Starters", name: "Starters" },
+  { id: "all", name: "All" },
+  { id: "Burgers", name: "Burgers" },
+  { id: "Pizza", name: "Pizza" },
+  { id: "Salads", name: "Salads" },
   { id: "Main Course", name: "Main Course" },
-  { id: "South Indian", name: "South Indian" },
+  { id: "Sandwiches", name: "Sandwiches" },
   { id: "Breads", name: "Breads" },
-  { id: "Desserts", name: "Desserts" }
+  { id: "Desserts", name: "Desserts" },
+  { id: "Beverages", name: "Beverages" }
 ];
 
 // Function to get products by category

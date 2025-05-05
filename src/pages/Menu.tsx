@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import ProductCard from '@/components/product/ProductCard';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { categories, getProductsByCategory } from '@/services/productService';
 
@@ -18,35 +17,49 @@ const Menu: React.FC = () => {
 
   return (
     <div className="container py-8">
-      <h1 className="text-3xl font-bold mb-8">Our Menu</h1>
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold mb-2">Our Menu</h1>
+        <p className="text-muted-foreground">
+          Explore our wide range of delicious items and add your favorites to cart.
+        </p>
+      </div>
       
       {/* Search and Filter */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">
-        <div className="md:flex-1">
+        <div className="md:flex-1 relative">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
           <Input
-            placeholder="Search menu items..."
+            placeholder="Search items..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full"
+            className="w-full pl-10 border rounded-md"
           />
         </div>
         
-        <div className="flex gap-2 overflow-x-auto pb-2">
-          {categories.map(category => (
-            <Button
-              key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
-              onClick={() => setSelectedCategory(category.id)}
-            >
-              {category.name}
-            </Button>
-          ))}
+        <div className="relative w-full md:w-48">
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="w-full h-10 pl-4 pr-8 border rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            {categories.map(category => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
         </div>
       </div>
       
       {/* Products Grid */}
       {filteredProducts.length > 0 ? (
-        <div className="product-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -54,15 +67,15 @@ const Menu: React.FC = () => {
       ) : (
         <div className="text-center py-12">
           <p className="text-muted-foreground text-lg">No items found matching your criteria.</p>
-          <Button 
-            variant="link" 
+          <button 
+            className="text-blue-600 underline mt-2"
             onClick={() => {
               setSearchQuery('');
               setSelectedCategory('all');
             }}
           >
             Clear filters
-          </Button>
+          </button>
         </div>
       )}
     </div>
