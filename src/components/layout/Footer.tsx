@@ -9,11 +9,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-bold text-lg mb-4">
-              <span className="text-primary">Quick</span>Cart
+              <span className="text-primary">Food</span>Cart
             </h3>
             <p className="text-muted-foreground">
-              Your one-stop solution for online grocery shopping.
-              Fast delivery, fresh products, and a seamless experience.
+              Your one-stop solution for delicious food ordering.
+              Fast delivery, fresh ingredients, and a seamless experience.
             </p>
           </div>
           
@@ -42,21 +42,20 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground">
-                Email: support@quickcart.com
+                Email: support@foodcart.com
               </li>
               <li className="text-muted-foreground">
-                Phone: +1 (555) 123-4567
+                Phone: +91 98765 43210
               </li>
               <li className="text-muted-foreground">
-                Hours: 9am - 6pm, Mon - Fri
+                Hours: 10am - 10pm, All days
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} QuickCart. All rights reserved.</p>
-          <p>This is a demo application for an interview project.</p>
+          <p>&copy; {new Date().getFullYear()} FoodCart. All rights reserved.</p>
         </div>
       </div>
     </footer>

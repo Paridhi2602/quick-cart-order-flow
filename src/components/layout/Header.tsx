@@ -22,7 +22,7 @@ const Header: React.FC = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="font-bold text-xl">
-            <span className="text-blue-600">Food</span>Cart
+            <span className="text-primary">Food</span>Cart
           </Link>
         </div>
 

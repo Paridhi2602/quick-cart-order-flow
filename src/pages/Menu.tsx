@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ProductCard from '@/components/product/ProductCard';
 import { Input } from '@/components/ui/input';
 import { categories, getProductsByCategory } from '@/services/productService';
+import { Search, ChevronDown } from 'lucide-react';
 
 const Menu: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -27,10 +28,7 @@ const Menu: React.FC = () => {
       {/* Search and Filter */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">
         <div className="md:flex-1 relative">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </svg>
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
           <Input
             placeholder="Search items..."
             value={searchQuery}
@@ -43,7 +41,7 @@ const Menu: React.FC = () => {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full h-10 pl-4 pr-8 border rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full h-10 pl-4 pr-8 border rounded-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary"
           >
             {categories.map(category => (
               <option key={category.id} value={category.id}>
@@ -51,9 +49,7 @@ const Menu: React.FC = () => {
               </option>
             ))}
           </select>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
-            <path d="m6 9 6 6 6-6"/>
-          </svg>
+          <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground h-4 w-4" />
         </div>
       </div>
       
@@ -68,7 +64,7 @@ const Menu: React.FC = () => {
         <div className="text-center py-12">
           <p className="text-muted-foreground text-lg">No items found matching your criteria.</p>
           <button 
-            className="text-blue-600 underline mt-2"
+            className="text-primary underline mt-2"
             onClick={() => {
               setSearchQuery('');
               setSelectedCategory('all');
